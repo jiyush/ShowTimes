@@ -23,6 +23,8 @@ Route::prefix('admin')->group(function(){
 	Route::get('/movie','MovieController@show');
 	Route::get('/movie/add','MovieController@addMovie');
 	Route::post('/movie/insert','MovieController@insert');
-	Route::get('/movie/update/{id}','MovieController@update');
+	Route::get('/movie/edit/{id}','MovieController@edit');
+	Route::post('/movie/update','MovieController@update');
+	Route::post('/movie/delete','MovieController@delete');
 
 });

@@ -28,8 +28,14 @@
 	           					<td>{{ $movie->title }}</td>
 	           					<td>{{ $movie->release }}</td>
 	           					<td>{{ $movie->hour }} : {{ $movie->minut }}</td>
-	           					<td><a  href="{{ url('/admin/movie/update/$movie->id') }}" class="btn btn-info">update</a></td>
-	           					<td><button class="btn btn-danger">Delete</button></td>
+	           					<td><a  href="/admin/movie/edit/{{ $movie->id }}" class="btn btn-info">Edit</a></td>
+	           					<td>
+		           						<form action="{{ url('admin/movie/delete') }}" method="POST">
+		           						{{ csrf_field() }}
+		           						<input type="hidden" value="{{ $movie->id }}" name="id">
+		           						<button type="submit" class="btn btn-danger">Delete</button>
+		           					</form>
+	           					</td>
 	           				</tr>
 	           				@endforeach
 	           			</tbody>

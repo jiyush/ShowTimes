@@ -48,4 +48,37 @@ class MovieController extends Controller
     	$movie->save();
     	return redirect(url('/admin/movie'));
     }
+    public function edit(Request $req){
+        $movie = Movie::where('movies.id','=',$req->id)->first();
+        // return $movie;
+        return view('admin.editmovie')->with('movie',$movie);
+    }
+    public function update(Request $req){
+        $movie = Movie::where('movies.id','=',$req->id)->first();
+
+        $movie->title = $req->title;
+        $movie->cast = $req->cast;
+        $movie->dir = $req->dir;
+        $movie->release = $req->release;
+        $movie->hour = $req->hour;
+        $movie->minut = $req->minut;
+        $movie->language = $req->language;
+        $movie->tailer_link = $req->tailer_link;
+        if($req->hasFile('poster')){
+            $poster = $req->file('poster');
+            $filename = time() . '.' . $poster->getClientOriginalExtension();
+            $location = public_path('/poster/'.$filename);
+            Image::make($poster)->save($location);
+            $movie->poster = $filename;
+        }
+        $movie->status = $req->satus;
+
+        $movie->update();
+        return redirect(url('/admin/movie'));
+    }
+    public function delete(Request $req){
+        $movie = Movie::where('movies.id','=',$req->id)->first();
+        $movie->delete();
+        return redirect('admin/movie');
+    }
 }
