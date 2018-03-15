@@ -15,7 +15,7 @@ Route::get('/', 'MovieController@display')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'MovieController@display')->name('home');
+Route::get('/user','MovieController@display')->name('user');
 
 Route::prefix('admin')->group(function(){
 
@@ -26,5 +26,20 @@ Route::prefix('admin')->group(function(){
 	Route::get('/movie/edit/{id}','MovieController@edit');
 	Route::post('/movie/update','MovieController@update');
 	Route::post('/movie/delete','MovieController@delete');
+
+
+	Route::get('/theater','TheaterController@show');
+	Route::get('/theater/add','TheaterController@add');
+	Route::post('/theater/insert','TheaterController@insert');
+	Route::get('/theater/edit/{id}','TheaterController@edit');
+	Route::post('/theater/update','TheaterController@update');
+	Route::post('/theater/delete','TheaterController@delete');
+
+	Route::get('/show','ShowController@showmovies');
+	Route::get('/show/add','ShowController@add');
+	Route::post('/show/insert','ShowController@insert');
+	Route::get('/show/edit/{id}','ShowController@edit');
+	Route::post('/show/update','ShowController@update');
+	Route::post('/show/delete','ShowController@delete');
 
 });

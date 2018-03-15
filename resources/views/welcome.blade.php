@@ -4,13 +4,11 @@
  <div class="carousel carousel-inner" role="listbox" style="margin-top: 100px;">
         <!--First slide-->
         <div class="carousel-item active">
-            <img class="d-block w-100" src="./slide/r.jpg" alt="First slide">
+            <img class="d-block w-100" src="./slide/raid.jpg" alt="First slide">
         </div>
         <!--/First slide-->
         <!--Second slide-->
-        <div class="carousel-item">
-            <img class="d-block w-100" src="./slide/raid.jpg" alt="Second slide">
-        </div>
+        
         <!--/Second slide-->
         <!--Third slide-->
         <div class="carousel-item">

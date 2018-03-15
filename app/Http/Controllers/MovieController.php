@@ -20,6 +20,7 @@ class MovieController extends Controller
         // return $movies;
         return view('welcome',compact('now','upcoming'));
     }
+    
     public function addMovie(){
 
 

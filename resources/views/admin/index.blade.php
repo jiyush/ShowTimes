@@ -55,6 +55,22 @@
 	            </span>
 	        </a>
 	      </li>
+	      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Search">
+	        <a class="nav-link" href="/admin/theater">
+	          
+	          <span class="nav-link-text">
+	          	Theater Management
+	            </span>
+	        </a>
+	      </li>
+	      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Search">
+	        <a class="nav-link" href="/admin/show">
+	          
+	          <span class="nav-link-text">
+	          	Show Management
+	            </span>
+	        </a>
+	      </li>
 	      
 
 	    </ul>
