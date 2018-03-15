@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'MovieController@display')->name('home');
+Route::get('/{id}','MovieController@book');
 
 Auth::routes();
 

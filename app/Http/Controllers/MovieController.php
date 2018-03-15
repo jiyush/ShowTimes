@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Movie;
+use App\Show;
 use Image;
 
 class MovieController extends Controller
@@ -19,6 +20,15 @@ class MovieController extends Controller
         $upcoming = Movie::where('movies.status', '=', 'Upcoming');
         // return $movies;
         return view('welcome',compact('now','upcoming'));
+    }
+    public function book(Request $req){
+        $movie = Movie::where('movies.id','=',$req->id)->first();
+        $th = Show::where('shows.movie','=',$movie->title)->get();
+        // foreach ($th as $t) {
+        //     return $t->theater;
+        // }
+        
+        return view('book',compact('movie','th'));
     }
     
     public function addMovie(){

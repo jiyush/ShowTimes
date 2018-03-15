@@ -67,7 +67,7 @@
 @yield('content')
 </div>
 <div >
-<footer class="page-footer font-small stylish-color-dark pt-4 mt-4 align-bottom" style="margin-bottom: -20px;">
+<footer class="page-footer font-small stylish-color-dark pt-4 mt-4 align-bottom" style="margin-bottom: -20px;bottom: 0;">
 
     
 
