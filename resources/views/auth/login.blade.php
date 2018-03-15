@@ -1,67 +1,74 @@
 @extends('main')
 
 @section('content')
+<div class="container" style="margin-top: 150px;margin-bottom: 150px;">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Login') }}</div>
 
-<style type="text/css">
-	.form-simple .header {
-  border-top-left-radius: .3rem;
-  border-top-right-radius: .3rem; }
+                <div class="card-body">
+                    <form method="POST" action="{{ route('login') }}">
+                        @csrf
 
-.form-simple input[type=text]:focus:not([readonly]) {
-  border-bottom: 1px solid #ff3547;
-  -webkit-box-shadow: 0 1px 0 0 #ff3547;
-  box-shadow: 0 1px 0 0 #ff3547; }
+                        <div class="form-group row">
+                            <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
-.form-simple input[type=text]:focus:not([readonly]) + label {
-  color: #4f4f4f; }
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
 
-.form-simple input[type=password]:focus:not([readonly]) {
-  border-bottom: 1px solid #ff3547;
-  -webkit-box-shadow: 0 1px 0 0 #ff3547;
-  box-shadow: 0 1px 0 0 #ff3547; }
+                                @if ($errors->has('email'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
 
-.form-simple input[type=password]:focus:not([readonly]) + label {
-  color: #4f4f4f; }
-</style>
-<section class="form-simple" style="margin-top: 100px;">
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
-    <!--Form with header-->
-    <div class="card">
-    	 <form method="POST" action="{{ route('login') }}">
-        <!--Header-->
-         {{ csrf_field() }}
-        <div class="header pt-3 grey lighten-2">
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
-            <div class="row d-flex justify-content-start">
-                <h3 class="deep-grey-text mt-3 mb-4 pb-1 mx-5">Log in to Showtimes</h3>
+                                @if ($errors->has('password'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-6 offset-md-4">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Remember Me') }}
+                                    </label>
+                                </div>
+                            </div>
+                            <div >
+                                <label>
+                                    <a href="{{ url('/register') }}">Sign up</a>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-8 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Login') }}
+                                </button>
+
+                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    {{ __('Forgot Your Password?') }}
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-
         </div>
-        <!--Header-->
-
-        <div class="card-body mx-4 mt-4">
-
-            <!--Body-->
-            <div class="md-form">
-                <input type="email" id="email" name="email" class="form-control">
-                <label for="Form-email4">Your email</label>
-            </div>
-
-            <div class="md-form pb-3">
-                <input type="password" id="password" name="password" class="form-control">
-                <label for="Form-pass4">Your password</label>
-                <p class="font-small grey-text d-flex justify-content-end">Forgot <a href="{{ route('password.request') }}" class="dark-grey-text font-weight-bold ml-1"> Password?</a></p>
-            </div>
-
-            <div class="text-center mb-4">
-                <button type="submit" class="btn btn-info btn-block z-depth-2">Log in</button>
-            </div>
-            <p class="font-small grey-text d-flex justify-content-center">Don't have an account? <a href="#" class="dark-grey-text font-weight-bold ml-1"> Sign up</a></p>
-
-        </div>
-    </form>
     </div>
-    <!--/Form with header-->
-
-</section>
+</div>
 @endsection

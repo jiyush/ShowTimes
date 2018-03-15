@@ -4,7 +4,7 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="./css/mdb.css">
-    <link rel="stylesheet" type="text/css" href="./css/mdb.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
     
     {{-- <script type="text/javascript" src="./js/popper.js"></script> --}}
 </head>
@@ -12,7 +12,7 @@
 <header>
 
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark indigo">
-        <a class="navbar-brand" href="#"><strong>ShowTimes</strong></a>
+        <a class="navbar-brand" href="#"><strong><h1>ShowTimes</h1></strong></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -52,7 +52,7 @@
 <div class="container">
 @yield('content')
 </div>
-<div style="margin-bottom: 20px;">
+<div >
 <footer class="page-footer font-small stylish-color-dark pt-4 mt-4 align-bottom" style="margin-bottom: -20px;">
 
     

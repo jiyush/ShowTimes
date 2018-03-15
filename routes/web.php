@@ -11,10 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'MovieController@display')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'MovieController@display')->name('home');
+
+Route::prefix('admin')->group(function(){
+
+	Route::get('/','AdminController@index');
+	Route::get('/movie','MovieController@show');
+	Route::get('/movie/add','MovieController@addMovie');
+	Route::post('/movie/insert','MovieController@insert');
+	Route::get('/movie/update/{id}','MovieController@update');
+
+});
