@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'MovieController@display')->name('home');
-Route::get('/{id}','MovieController@book');
+Route::get('/user/{id}','MovieController@book');
 
 Auth::routes();
 

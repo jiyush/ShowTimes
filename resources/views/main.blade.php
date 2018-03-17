@@ -2,9 +2,9 @@
 <html>
 <head>
     <title></title>
-    <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="./css/mdb.css">
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css">
+    {{-- <link rel="stylesheet" type="text/css" href="./css/style.css"> --}}
     
     {{-- <script type="text/javascript" src="./js/popper.js"></script> --}}
 </head>
@@ -47,27 +47,14 @@
                     </ul>
     </nav>
 
-    <div class="view intro-2">
-        <div class="full-bg-img">
-            <div class="mask rgba-black-light flex-center">
-                <div class="container text-center white-text">
-                    <div class="white-text text-center wow fadeInUp">
-                        <h2>This Navbar is fixed</h2>
-                        <h5>It will always stay visible on the top, even when you scroll down</h5>
-                        <br>
-                        <p>Full page intro with background image will be always displayed in full screen mode, regardless of device </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
 </header>
 <div class="container">
 @yield('content')
 </div>
 <div >
-<footer class="page-footer font-small stylish-color-dark pt-4 mt-4 align-bottom" style="margin-bottom: -20px;bottom: 0;">
+<footer class="page-footer font-small indigo pt-4 mt-4 align-bottom" style="margin-bottom: -20px;bottom: 0;">
 
     
 
@@ -84,9 +71,9 @@
 
 </footer>
 </div>
-<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="./js/bootstrap.js"></script>
-<script type="text/javascript" src="./js/mdb.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function (){
 

@@ -66,7 +66,7 @@
                         <p class="card-text"> Director: {{ $n->dir }}</p>
 
                         <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                        <a href="/{{ $n->id }}" class="btn btn-light-blue btn-md">Book</a>
+                        <a href="/user/{{ $n->id }}" class="btn btn-light-blue btn-md">Book</a>
                     </div>
                     <!--Card content-->
 
